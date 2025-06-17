@@ -50,13 +50,14 @@ function renderStockSection() {
     <table class="compact-table">
       <thead>
         <tr>
-          <th>المسلسل</th>
+          <th>م</th>
           <th>اسم المنتج</th>
           <th>السعر</th>
           <th>الكمية</th>
           <th>الإجمالي</th>
-          <th>تعديل</th>
           <th>حذف</th>
+          <th>تعديل</th>
+         
         </tr>
       </thead>
       <tbody id="stock-body"></tbody>
@@ -101,8 +102,8 @@ function renderStockSection() {
         <td>${item.price}</td>
         <td>${item.quantity}</td>
         <td>${item.price * item.quantity}</td>
-        <td><button data-index="${index}" class="delete-stock">❌</button></td>
-        <td><button data-index="${index}" class="updat-stock">✏️</button></td>
+        <td  class="bg-danger"  ><button data-index="${index}" class="delete-stock">❌</button></td>
+        <td  class="bg-warning" ><button data-index="${index}" class="updat-stock">✏️</button></td>
       `;
       tbody.appendChild(row);
     });
@@ -151,18 +152,18 @@ function renderClientsSection() {
     <button id="client-add">إضافة عميل</button>
     <table class="compact-table">
       <thead>
-        <tr>
-          <th>المسلسل</th>
+        <tr class="w-100" >
+          <th>م</th>
           <th>اسم الزبون</th>
           <th>المنتج</th>
-          <th>سعر المنتج</th>
+          <th>السعر</th>
           <th>عدد الأقساط</th>
-          <th>الجزء الشهري</th>
+          <th>القسط الشهري</th>
           <th>الأقساط المدفوعة</th>
-          <th>الأقساط المتأخرة</th>
+          <th>الأقساط الباقية</th>
           <th>المتبقي</th>
           <th>الإجراء</th>
-          <th>حذف</th>
+          <th  >حذف</th>
         </tr>
       </thead>
       <tbody id="client-body"></tbody>
@@ -245,7 +246,7 @@ function renderClientsSection() {
           <button class="pay-installment  fw-bolder" data-index="${index}" style="background-color: green; color: white;">💰 دفـع</button>
           <button class="undo-installment fw-light" data-index="${index}" style="background-color: red; color: white;">↩️ استرجاع</button>
         </td>
-        <td><button class="delete-client fw-light" data-index="${index}">❌</button></td>
+        <td  ><button class="delete-client fw-light" data-index="${index}">❌</button></td>
       `;
 
       tbody.appendChild(row);
